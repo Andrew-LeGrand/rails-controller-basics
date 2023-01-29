@@ -12,4 +12,20 @@ class UsersController < ApplicationController
 
         # otherwise, render new view template
     end
+
+    def index
+        users = [
+            {
+                username: "john123"
+            },
+            {
+                username: "amy123"
+            }
+        ]
+
+        respond_to do |format|
+            format.html
+            format.json { render json: users }
+        end
+    end
 end
